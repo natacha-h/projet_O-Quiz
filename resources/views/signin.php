@@ -5,7 +5,7 @@
                 <h2> Connectez-vous </h2>
 
             </div>
-            <form action="/signin" method="POST">
+            <form action="/signin" method="POST" class="col-6">
 
                 <section class="form-group">
                     <label for="email">Adresse e-mail</label>

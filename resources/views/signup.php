@@ -9,35 +9,43 @@
                 
                 </p>
             </div>
-            <form action="/signup" method="POST">
+            <form action="/signup" method="POST" class="container">
+                
+            <div class="row">
 
-                <section class="form-group">
-                    <label for="firstname">Votre prénom</label>
-                    <input type="firstname" class="form-control" id="firstname" aria-describedby="firstnameHelp" placeholder="Prénom" >
-                    <!-- <small id="emailHelp" class="form-text text-muted">Nous ne partagerons pas votre e-mail avec une tierce partie.</small> -->
-                </section>
+                    <section class="form-group col-md" >
+                        <label for="firstname">Votre prénom</label>
+                        <input type="firstname" class="form-control" id="firstname" aria-describedby="firstnameHelp" placeholder="Prénom" >
+                        <!-- <small id="emailHelp" class="form-text text-muted">Nous ne partagerons pas votre e-mail avec une tierce partie.</small> -->
+                    </section>
 
-                <section class="form-group">
-                    <label for="lastname">Votre nom</label>
-                    <input type="lastname" class="form-control" id="lastname" aria-describedby="lastnameHelp" placeholder="Nom" >
-                    <!-- <small id="emailHelp" class="form-text text-muted">Nous ne partagerons pas votre e-mail avec une tierce partie.</small> -->
-                </section>
+                    <section class="form-group col-md">
+                        <label for="lastname">Votre nom</label>
+                        <input type="lastname" class="form-control" id="lastname" aria-describedby="lastnameHelp" placeholder="Nom" >
+                        <!-- <small id="emailHelp" class="form-text text-muted">Nous ne partagerons pas votre e-mail avec une tierce partie.</small> -->
+                    </section>
+                </div>
 
-                <section class="form-group">
-                    <label for="email">Adresse e-mail</label>
-                    <input type="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="exemple@e-mail.com" >
-                    <!-- <small id="emailHelp" class="form-text text-muted">Nous ne partagerons pas votre e-mail avec une tierce partie.</small> -->
-                </section>
+                <div class="row">
 
-                <section class="form-group">
-                    <label for="password">Mot de passe</label>
-                    <input type="password" class="form-control" id="password" aria-describedby="passwordHelp" placeholder="mot de passe" >
-                    <label for="password_verif">Répéter le mot de passe</label>
-                    <input type="password" class="form-control" id="password_verif" aria-describedby="passwordHelp" placeholder="mot de passe" >
-                    
-                </section>
+                    <section class="form-group col-md">
+                        <label for="email">Adresse e-mail</label>
+                        <input type="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="exemple@e-mail.com" >
+                        <!-- <small id="emailHelp" class="form-text text-muted">Nous ne partagerons pas votre e-mail avec une tierce partie.</small> -->
+                    </section>
+    
+                    <section class="form-group col-md">
+                        <label for="password">Mot de passe</label>
+                        <input type="password" class="form-control" id="password" aria-describedby="passwordHelp" placeholder="mot de passe" ><br>
+                        <label for="password_verif">Répéter le mot de passe</label>
+                        <input type="password" class="form-control" id="password_verif" aria-describedby="passwordHelp" placeholder="mot de passe" >
+                        
+                    </section>
+                </div>
 
-                <button type="submit" class="btn btn-info">S'inscrire</button>
+
+
+                <button type="submit" class="btn btn-light">S'inscrire</button>
             </form>
             
         </main>
