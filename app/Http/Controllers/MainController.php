@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+use App\Models\Quiz;
 
 class MainController extends Controller
 {
@@ -16,6 +17,12 @@ class MainController extends Controller
 
     public function home()
     {
-        return view('home');
+        $quizList = Quiz::all();
+        // dump($quizList);
+        // exit;
+        // afficher les titres des quiz sur la home
+        return view('home', [
+            'quizList' => $quizList
+        ]);
     }
 }

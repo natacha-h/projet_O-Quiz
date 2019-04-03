@@ -10,46 +10,19 @@
                 </p>
             </div>
 
-            <div class="row">
-
-                <div class="col">
-                    <h3>Titre 1</h3>
-                    <h5>Sous titre</h5>
-                    <p>by author name</p>
-                </div>
-
-                <div class="col">
-                    <h3>Titre 2</h3>
-                    <h5>Sous titre</h5>
-                    <p>by author name</p>
-                </div>
-
-                <div class="col">
-                    <h3>Titre 3</h3>
-                    <h5>Sous titre</h5>
-                    <p>by author name</p>
-                </div>
-            </div>
-
-            <div class="row">
-                <div class="col">
-                    <h3>Titre 4</h3>
-                    <h5>Sous titre</h5>
-                    <p>by author name</p>
-                </div>
-
-                <div class="col">
-                    <h3>Titre 5</h3>
-                    <h5>Sous titre</h5>
-                    <p>by author name</p>
-                </div>
-
-                <div class="col">
-                    <h3>Titre 6</h3>
-                    <h5>Sous titre</h5>
-                    <p>by author name</p>
-                </div>
-            </div>
+            <section class="row justify-content-between">
+                <?php foreach($quizList as $currentQuiz) : ?>
+                    <article class="card m-2" style="width: 20rem;">
+                        <div class="card-body">
+                            <h5 class="card-title"><?=$currentQuiz->title ?></h5>
+                            <h6 class="card-subtitle mb-2 text-muted"><?=$currentQuiz->description ?></h6>
+                            <p class="card-text">by <?=$currentQuiz->app_users_id ?></p>
+                        </div>
+                    </article>
+                <?php endforeach; ?>
+                
+                    
+            </section>
         </main>
 
 <?php

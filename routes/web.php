@@ -20,12 +20,35 @@ $router->get('/', [
 $router->get('quiz/[i:id]', [
     'as' => 'quiz',
     'uses' => 'QuizController@quiz'
-]
+    ]
 );
 
 $router->post('quiz/[i:id]', [
     'as' => 'quiz-post',
     'uses' => 'QuizController@quizPost'
-]
+    ]
 );
 
+$router->get('/signup', [
+    'as' => 'inscription',
+    'uses' => 'UserController@signup'
+    ]
+);
+
+$router->post('/signup', [
+    'as' => 'inscription-post',
+    'uses' => 'UserController@signupPost'
+    ]
+);
+
+$router->get('/signin', [
+    'as' => 'connexion',
+    'uses' => 'UserController@signin'
+    ]
+);
+
+$router->post('/signin', [
+    'as' => 'connexion',
+    'uses' => 'UserController@signinPost'
+    ]
+);
