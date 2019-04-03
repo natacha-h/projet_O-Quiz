@@ -1,21 +1,60 @@
-# Lumen PHP Framework
+# oQuiz, le retour de la vengeance :question:
 
-[![Build Status](https://travis-ci.org/laravel/lumen-framework.svg)](https://travis-ci.org/laravel/lumen-framework)
-[![Total Downloads](https://poser.pugx.org/laravel/lumen-framework/d/total.svg)](https://packagist.org/packages/laravel/lumen-framework)
-[![Latest Stable Version](https://poser.pugx.org/laravel/lumen-framework/v/stable.svg)](https://packagist.org/packages/laravel/lumen-framework)
-[![Latest Unstable Version](https://poser.pugx.org/laravel/lumen-framework/v/unstable.svg)](https://packagist.org/packages/laravel/lumen-framework)
-[![License](https://poser.pugx.org/laravel/lumen-framework/license.svg)](https://packagist.org/packages/laravel/lumen-framework)
+Hey ! A ce qu'on m'a dit, tu as vu la lumière :bulb: cette saison ? :door: :running:
 
-Laravel Lumen is a stunningly fast PHP micro-framework for building web applications with expressive, elegant syntax. We believe development must be an enjoyable, creative experience to be truly fulfilling. Lumen attempts to take the pain out of development by easing common tasks used in the majority of web projects, such as routing, database abstraction, queueing, and caching.
+A défaut de lumière, tu as vu **Lumen** un micro-framework qu'il est bien à utiliser :heart_eyes:
 
-## Official Documentation
+Pendant les prochaines journées, tu vas travailler sur le projet _oQuiz_ que tu as déjà préparé auparavant :tada:  
+**Chacun code dans son dépôt**, mais des groupes de travail sur Discord sont vivement conseillés :nerd_face:
 
-Documentation for the framework can be found on the [Lumen website](https://lumen.laravel.com/docs).
+## BDD, User Stories & Routes :construction:
 
-## Security Vulnerabilities
+Pour avoir une base commune, les documents suivants sont fournis avec ce dépôt :
+- MCD
+- MLD
+- import SQL
+- user stories
+- routes
 
-If you discover a security vulnerability within Lumen, please send an e-mail to Taylor Otwell at taylor@laravel.com. All security vulnerabilities will be promptly addressed.
+### BDD
 
-## License
+- Pour la partie base de données, il est préférable qu'on travaille tous sur la base de données fournie.
+- **Important :** Pour l'import des données [suivez ce guide !](./docs/database/import.md)
 
-The Lumen framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+### User Stories
+
+- Il en est de même pour les user stories.
+
+### Routes
+
+- Cependant, tu es libre de prendre tes routes comme base de travail, si tu le souhaites.
+
+## Déroulement :keyboard:
+
+- On ne va pas faire tout le projet aujourd'hui
+- On va se contenter de mettre en place les user stories estampillées **_Sprint 1_**
+- Et c'est déjà pas mal :wink:
+- Ensuite, pour chaque journée d'atelier, il y a un sprint dédié :tada:
+
+> Note : Le sprint 5 est un Bonus, et comme tout Bonus, il est **optionnel**
+
+## Choix techniques :thinking:
+
+- Tu es libre des choix techniques de ton projet
+    - par exemple, une séparation **frontend** et **backend** comme dans _oKanban_ avec des requêtes Ajax
+    - ou une version plus light avec un seul dépôt PHP/Lumen (sans Ajax, avec ou sans JS)
+- Une intégration HTML/CSS est fournie, mais tu es libre d'en refaire une, avec ou sans framework CSS
+- Au final, tu es assez libre, sauf sur une chose : tu dois utiliser le framework _Lumen_
+- D'ailleurs, pour rappel, voilà le dépôt contenant la marche à suivre pour [commencer un projet avec Lumen](https://github.com/O-clock-Quantum/S07-E01-exo-first-lumen-project)
+
+## Users :family:
+
+- il y a actuellement 2 utilisateurs dans la base de données
+- le mot de passe pour ces 2 users est : _quizoclock_
+
+## Bonus :lipstick:
+
+- Faire une inté HTML/CSS bien plus jolie (heureusement, c'est pas très difficile...)
+- Utiliser le framework CSS de ton choix
+- Nous suggérons l'utilisation de [Bootstrap](https://getbootstrap.com/) ou de [Bulma](https://bulma.io/)
+- Ce bonus est _presque obligatoire_ tellement ça pique les yeux... :unamused:
