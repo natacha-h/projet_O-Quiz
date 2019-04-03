@@ -1,18 +1,27 @@
 body {
-    font-family: Monospace, sans-serif;
-    background-color: #666 ! important;
+    /* background-color: rgb(89, 149, 199) ; */
+    background: linear-gradient(#234B9A, transparent), linear-gradient(transparent, #078);
+
+}
+.navbar {
+    margin-left :-1.25rem;
+    margin-top: -1.25rem;
+    background-color: none;
+
 }
 
 h1 {
-    font-size: 3em;
+    font-size: 3.5em;
     margin: 0.325rem 0 1rem;
-    color: blue;
+    color: black;
+    text-align: center;
 }
 
 h2 {
     font-size: 2.4em;
+    text-align: center;
     margin: 0.325rem 0 0.625rem;
-    color: darkblue;
+    color:#222;
 }
 
 h3 {
@@ -25,26 +34,35 @@ p {
     margin: 0.625rem 0;
 }
 
-a {
+/* a {
     color: yellowgreen;
-}
+} */
 
 .container {
-    width: 900px;
+    /* width: 900px; */
     margin: auto;
-    background-color: #666;
+    /* background-color: #234B78; */
     padding: 1.25rem;
-    margin-top: 0.625rem;
-    border: 1px solid palevioletred;
+    /* margin-top: 0.625rem; */
+}
+
+#intro {
+    margin: 1em 0;
 }
 
 .row {
     display: flex;
 }
 
-.row > .col {
-    flex: 1;
+.card {
+    width: 30%;
+    background-color: #EEE;
+    border: none;
 }
+
+/* .row > .col {
+    flex: 1;
+} */
 
 .question {
     margin: 0.625rem 1.25rem;
@@ -85,9 +103,9 @@ a {
     width: 100%;
     margin: 0.625rem 0;
     text-align: center;
-    color: red;
-    border: 2px solid red;
-    background-color: yellow;
+    color: #009999;
+    border: 2px solid #118888;
+    background-color: #078;
     font-size: 1.4em;
     font-weight: bold;
     padding: 0.325rem 0;

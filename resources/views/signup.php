@@ -32,7 +32,9 @@
                 <section class="form-group">
                     <label for="password">Mot de passe</label>
                     <input type="password" class="form-control" id="password" aria-describedby="passwordHelp" placeholder="mot de passe" >
-                    <!-- <small id="emailHelp" class="form-text text-muted">Nous ne partagerons pas votre e-mail avec une tierce partie.</small> -->
+                    <label for="password_verif">Répéter le mot de passe</label>
+                    <input type="password" class="form-control" id="password_verif" aria-describedby="passwordHelp" placeholder="mot de passe" >
+                    
                 </section>
 
                 <button type="submit" class="btn btn-info">S'inscrire</button>
