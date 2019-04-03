@@ -11,6 +11,21 @@
 |
 */
 
-$router->get('/', function () use ($router) {
-    return $router->app->version();
-});
+$router->get('/', [
+    'as' => 'home',
+    'uses' => 'MainController@home'
+    ]
+);
+
+$router->get('quiz/[i:id]', [
+    'as' => 'quiz',
+    'uses' => 'QuizController@quiz'
+]
+);
+
+$router->post('quiz/[i:id]', [
+    'as' => 'quiz-post',
+    'uses' => 'QuizController@quizPost'
+]
+);
+
