@@ -21,9 +21,18 @@ class QuizController extends Controller
     public function quiz($id){
 
         //dump($id); exit;
+        // récupérer les infos du quiz
+        $currentQuiz = Quiz::find($id);
+        //dump($currentQuiz); exit;
         // récupérer les questions du quiz concerné
         $questions=Quiz::find($id)->questions;
-        dump($questions); exit;
+        //dump($questions); exit;
+
+        // afficher les questions sur la page du quiz
+        return view('quizConsult', [
+            'currentQuiz' => $currentQuiz,
+            'questions' => $questions
+        ]);
         
     }
 
