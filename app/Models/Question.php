@@ -17,4 +17,14 @@ class Question extends Model {
         return $this->belongsTo('App\Models\Quiz', 'quizzes_id');
     }
 
+    public function answer()
+    {
+        return $this->hasMany('App\Models\Answer', 'questions_id');
+    }
+
+    public function level()
+    {
+        return $this->belongsTo('App\Models\Level', 'levels_id');
+    }
+
 }
