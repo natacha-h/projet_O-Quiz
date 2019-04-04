@@ -15,8 +15,10 @@ class MainController extends Controller
         //
     }
 
+    // méthode pour la route 'home'
     public function home()
     {
+        // je récupère les quiz en DB
         $quizList = Quiz::all();
         // dump($quizList);
         // exit;
