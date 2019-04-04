@@ -1,7 +1,10 @@
 <?php
 
 namespace App\Http\Controllers;
-use DB;
+//use DB;
+use Illuminate\Http\Request;
+use App\Models\Quiz;
+use App\Models\Question;
 
 class QuizController extends Controller
 {
@@ -15,7 +18,12 @@ class QuizController extends Controller
         //
     }
 
-    public function quiz(){
+    public function quiz($id){
+
+        //dump($id); exit;
+        // récupérer les questions du quiz concerné
+        $questions=Quiz::find($id)->questions;
+        dump($questions); exit;
         
     }
 

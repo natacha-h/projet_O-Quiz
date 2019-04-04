@@ -3,18 +3,18 @@
 namespace App\Models;
 use Illuminate\Database\Eloquent\Model;
 
-class Quiz extends Model {
+class Question extends Model {
     /**
      * La table associée au modèle
      *
      * @var string
      */
-    protected $table = 'quizzes';
+    protected $table = 'questions';
 
     // méthode pour indiquer à Quiz qu'il a plusieurs questions
-    public function questions()
+    public function quiz()
     {
-        return $this->hasMany('App\Models\Question', 'quizzes_id');
+        return $this->belongsTo('App\Models\Quiz', 'quizzes_id');
     }
 
 }
