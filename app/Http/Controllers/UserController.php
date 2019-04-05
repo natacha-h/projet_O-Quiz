@@ -65,7 +65,7 @@ class UserController extends Controller
         $newUser->email = $emailAddress;
         $newUser->password = $password;
 
-        //$newUser->save();
+        $newUser->save();
 
 
         return view('signup');

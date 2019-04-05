@@ -1,0 +1,22 @@
+<?php
+    include __DIR__.'/layout/header.php';
+?>
+            <section id="intro">
+                <h2> Les différents sujets </h2>
+            </section>
+
+            <section class="row justify-content-between">
+                <?php foreach($tags as $currentTag) : ?>
+                    <article class="tag">
+                        <h5><?= $currentTag->name ?></h5>
+                    </article>
+                <?php endforeach; ?>
+                
+                    
+            </section>
+            
+        </main>
+
+<?php
+    include __DIR__.'/layout/footer.php';
+?>

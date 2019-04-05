@@ -62,3 +62,15 @@ $router->post('/signin', [
     'uses' => 'UserController@signinPost'
     ]
 );
+
+// la route pour visualiser tous les sujets
+$router->get('/tags', [
+    'as' => 'sujet',
+    'uses' => 'TagController@tags'
+]);
+
+// la route pour afficher les quiz par sujet
+$router->get ('/tags/{id:[0-9]+}/quiz', [
+    'as' => 'quiz-par-sujet',
+    'uses' => 'TagController@quiz'
+]);
