@@ -14,7 +14,7 @@ class Tag extends Model {
     // méthode pour indiquer à Quiz qu'il a plusieurs questions
     public function quiz()
     {
-        return $this->belongsToMany('App\Models\Quiz','quizzes_has_tags', 'quizzes_id', 'tags_id');
+        return $this->belongsToMany('App\Models\Quiz','quizzes_has_tags', 'tags_id','quizzes_id' );
     }
 
 }
