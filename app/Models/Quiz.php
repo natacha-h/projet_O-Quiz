@@ -17,8 +17,18 @@ class Quiz extends Model {
         return $this->hasMany('App\Models\Question', 'quizzes_id');
     }
 
+    /**
+     * get all related tags
+     */
     public function tags()
     {
+
+        // Ici, on définit une relation Many to Many
+        // => belongsToMany
+        // => 1er argument : le FQCN du Model à lier
+        // => 2e argument : le nom de la table pivot
+        // => 3e argument : la clé étrangère permettant la "jointure" vers le Model (la table) actuel
+        // => 4e argument : la clé étrangère permettant la "jointure" vers l'autre Model (l'autre table)
         return $this->belongsToMany('App\Models\Tag','quizzes_has_tags', 'quizzes_id', 'tags_id');
     }
 }

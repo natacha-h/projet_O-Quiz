@@ -61,13 +61,24 @@ p {
     border: none;
 }
 
+.tag{
+    margin: .3em;
+    padding: .3em .6em;
+    background-color: #234B9A;
+    border-radius: 5px;
+    color: white;
+    font-weight: normal;
+}
+
 form {
     margin: 0 auto;
 }
 /* .row > .col {
     flex: 1;
 } */
-
+.col.question {
+    width: calc(100% / 3 - 2.5rem);
+} 
 .question {
     margin: 0.625rem 1.25rem;
 }

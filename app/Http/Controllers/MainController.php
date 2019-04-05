@@ -22,6 +22,7 @@ class MainController extends Controller
         $quizList = Quiz::all();
         // dump($quizList);
         // exit;
+        
         // afficher les titres des quiz sur la home
         return view('home', [
             'quizList' => $quizList
