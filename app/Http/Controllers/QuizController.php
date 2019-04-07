@@ -76,7 +76,7 @@ class QuizController extends Controller
 
             return view('quizConsult', [
                 'currentQuiz' => $currentQuiz,
-                'author' => $author,
+                //'author' => $author,
                 'questions' => $questions,
                 //'answers' => $answersList,
                 //'taglist' => $tagList

@@ -7,9 +7,9 @@
 
             <section class="row justify-content-between">
                 <?php foreach($tags as $currentTag) : ?>
-                    <article class="tag">
+                    <article>
                        <a href="<?= route('quiz-par-sujet', ['id' => $currentTag->id]) ?>">
-                       <h5><?= $currentTag->name ?></h5>
+                       <h5 class="tag"><?= $currentTag->name ?></h5>
                            </a> 
                     </article>
                 <?php endforeach; ?>

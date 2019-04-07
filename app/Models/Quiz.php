@@ -31,4 +31,9 @@ class Quiz extends Model {
         // => 4e argument : la clé étrangère permettant la "jointure" vers l'autre Model (l'autre table)
         return $this->belongsToMany('App\Models\Tag','quizzes_has_tags', 'quizzes_id', 'tags_id');
     }
+
+    public function author()
+    {
+        return $this->belongsTo('App\Models\User', 'app_users_id');
+    }
 }

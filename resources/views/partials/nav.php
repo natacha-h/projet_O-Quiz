@@ -9,6 +9,9 @@
                 <a class="nav-link" href="<?= route('home') ?>">Accueil</a>
             </li>
             <li class="nav-item">
+                <a class="nav-link" href="<?= route('sujet') ?>">Sujets</a>
+            </li>
+            <li class="nav-item">
                 <a class="nav-link" href="<?= route('connexion') ?>">Mon compte</a>
             </li>
             <li class="nav-item">

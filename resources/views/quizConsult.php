@@ -13,13 +13,13 @@
             
     <section id="tags-display" class="d-flex flex-row" >
         <?php foreach($currentQuiz->tags as $currentTag): ?>
-        <h6 class="tag"> 
-            <?= $currentTag->name?>
-        </h6>
+        <a href="<?= route('quiz-par-sujet', ['id' => $currentTag->id]) ?>">
+            <h6 class="tag"><?= $currentTag->name?></h6>
+        </a>
         <?php endforeach; ?>
     </section >
             
-    <p>by <?= $author->firstname?> <?= $author->lastname?></p>
+    <p>by <?= $currentQuiz->author->firstname?> <?= $currentQuiz->author->lastname?></p>
            
 </section>
 

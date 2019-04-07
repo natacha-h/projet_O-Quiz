@@ -16,7 +16,7 @@
                         <div class="card-body">
                             <h5 class="card-title"><a href="<?= route('quiz', ['id' => $currentQuiz->id]) ?>"><?=$currentQuiz->title ?></a></h5>
                             <h6 class="card-subtitle mb-2 text-muted"><?=$currentQuiz->description ?></h6>
-                            <p class="card-text">by <?=$currentQuiz->app_users_id ?></p>
+                            <p class="card-text">by <?=$currentQuiz->author->firstname?> <?= $currentQuiz->author->lastname ?></p>
                         </div>
                     </article>
                 <?php endforeach; ?>
