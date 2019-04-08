@@ -184,7 +184,7 @@ class UserController extends Controller
                     // si ça matche, on connect le User
                     UserSession::connect($user);
                     // et on redirige vers l'accueil
-                    return redirect()->route('home');
+                    return redirect()->route('profil');
                 } else {
                     // sinon on indique l'erreur
                     $error[]= 'L\'email et/ou le mot de passe est incorrect';
@@ -205,5 +205,12 @@ class UserController extends Controller
             'email'=> $email
         ]
     ]);
+    }
+
+    public function profile()
+    {
+        return view('profile', [
+            'user' => UserSession::getUser()
+        ]);
     }
 }

@@ -63,6 +63,12 @@ $router->post('/signin', [
     ]
 );
 
+// la route pour afficher la page profil du user
+$router->get ('/account', [
+    'as' => 'profil',
+    'uses' => 'UserController@profile'
+]);
+
 // la route pour visualiser tous les sujets
 $router->get('/tags', [
     'as' => 'sujet',
