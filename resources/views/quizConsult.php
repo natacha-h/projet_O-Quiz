@@ -22,6 +22,36 @@
     <p>by <?= $currentQuiz->author->firstname?> <?= $currentQuiz->author->lastname?></p>
            
 </section>
+<?php if ($user) : ?>
+    
+        <div class="row">
+    <?php foreach($questions as $currentQuestion): ?>
+
+    <article class="card m-2">
+        <div class="card-body">
+            <span class="level level--<?= $currentQuestion->level->getCssClass()?>"><?= $currentQuestion->level->name?></span>
+
+            <div class="question__question"><?= $currentQuestion->question ?></div>
+
+            <ul>
+                <?php //$currentAnswerList = $answers[$currentQuestion->id]; 
+                foreach($currentQuestion->answer as $currentAnswer): ?>
+                <div>
+                    <input type="radio" name="reponses" id="reponse <?=$currentAnswer->id?>" value="option<?=$currentAnswer->id?>">
+                        <label for="reponse <?=$currentAnswer->id?>">
+                                <?= $currentAnswer->description ?>
+                        </label> 
+                </div>
+                <?php endforeach; ?>
+            </ul> 
+
+        </div>
+    </article>
+    <?php endforeach; ?>   
+</div>
+
+
+<?php else: ?>
 
 <div class="row">
     <?php foreach($questions as $currentQuestion): ?>
@@ -43,6 +73,8 @@
     </article>
     <?php endforeach; ?>   
 </div>
+
+<?php endif; ?>
 
 </main>
 

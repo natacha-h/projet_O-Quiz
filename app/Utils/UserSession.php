@@ -26,12 +26,22 @@ abstract class UserSession {
     // appel = UserSession::disconnect()
     public static function disconnect()
     {
-
+        unset($_SESSION[self::INDEX_USER]);
+        // on ne détruit pas toutes les données en SESSION, seulement la donnée gérant la connexion du user
     }
 
     // appel = UserSession::isAdmin()
     public static function isAdmin(){
+        // on récupère l'utilisateur connecté
+        $currentUser = self::getUser();
 
+        // si il y a un utilisateur connecté
+        if (!empty($currentUser)){
+            // on compare son rôle à "admin"
+            return ($currentUser->role == 'admin');
+        }
+        // si non, on retourne false
+        return false;
     }
 
     /**

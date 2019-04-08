@@ -8,6 +8,7 @@ use App\Models\Question;
 use App\Models\Answer;
 use App\Models\Tag;
 use App\Models\User;
+use App\Utils\UserSession;
 
 class QuizController extends Controller
 {
@@ -80,6 +81,7 @@ class QuizController extends Controller
                 'questions' => $questions,
                 //'answers' => $answersList,
                 //'taglist' => $tagList
+                'user' => UserSession::isConnected()
             ]);
         } else {
             // on lance NotDoundHttpException afin d'afficher la page 404
