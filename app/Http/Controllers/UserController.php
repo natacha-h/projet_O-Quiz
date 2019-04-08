@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\User;
-
+use App\Utils\UserSession;
 
 class UserController extends Controller
 {
@@ -106,7 +106,7 @@ class UserController extends Controller
         // On vérifie si il $error est vide
         if (count($error) == 0) {
             // on ajoute l'utilisateur en BD
-            $newUser = new User;
+            $newUser = new User();
             $newUser->firstname = $firstName;
             $newUser->lastname = $lastName;
             $newUser->email = $emailAddress;
@@ -131,20 +131,79 @@ class UserController extends Controller
 
         }
 
-
-
-
-
         return view('signup');
     }
 
+    // méthode pour la route /signin
     public function signin()
     {
         return view('signin');
     }
 
-    public function signinPost()
+    // méthode pour la route /signin en POST
+    public function signinPost(Request $request)
     {
-        //
+        // on récupère les données
+        $email = $request->input('email', '');
+        //dump($email); exit;
+        $password = $request->input('password');
+        
+        
+        // on crée un tableau d'erreurs
+        $error = [];
+        // si l'email n'est pas vide
+        if(empty($email)){
+            // on indique l'erreur
+            $error[] = 'L\'email est vide';
+        } // sinon
+        else {
+            //on vérifie que l'email est bien un email
+            if(filter_var($email, FILTER_VALIDATE_EMAIL) === false) {
+                $error[] = 'Le format de l\'email est incorrect';
+            
+        }
+            
+        // si le mot de passe est vide
+        if (empty($password)){
+            // on indique l'erreur
+            $error[] = 'Le mot de passe est vide';
+        }
+        //dump($error); exit;
+
+        // si il  n'y a pas d'erreur
+        if (empty($error)){
+            // on récupère le Model User en BD
+            $user = User::where('email', $email)->first();
+            // get() équivaut à fetchAll() (en PDO) => renvoie une collection
+            // first() équivaut à fetch() (en PDO) => renvoie un Model
+
+            // si l'utilisateur existe
+            if (!empty($user)) {
+                // on vérifie le password
+                if (password_verify($password, $user->password)){
+                    // si ça matche, on connect le User
+                    UserSession::connect($user);
+                    // et on redirige vers l'accueil
+                    return redirect()->route('home');
+                } else {
+                    // sinon on indique l'erreur
+                    $error[]= 'L\'email et/ou le mot de passe est incorrect';
+                }
+            } else {
+                // on ajoute le message d'erreur
+                $error[]= 'L\'email et/ou le mot de passe est incorrect';
+
+            }
+        }  
+        
+    }
+    // si on arrive ici c'est qu'il y a eu une erreur détectée, car sinon ça aurait redirigé le client
+    // donc on affiche les erreurs
+    return view('signin', [
+        'errorList' => $error,
+        'inputValues'=> [
+            'email'=> $email
+        ]
+    ]);
     }
 }
