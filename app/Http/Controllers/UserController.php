@@ -213,4 +213,12 @@ class UserController extends Controller
             'user' => UserSession::getUser()
         ]);
     }
+
+    public function logout()
+    {
+        // déconnexion
+        UserSession::disconnect();
+        // redirection vers la page d'accueil
+        return redirect()->route('home');
+    }
 }

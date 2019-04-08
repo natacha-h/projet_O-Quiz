@@ -18,8 +18,9 @@
                 <a class="nav-link" href="<?= route('inscription') ?>">S'incrire</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">Déconnexion</a>
+                <a class="nav-link" href="<?= route('deconnexion') ?>">Déconnexion</a>
             </li>
+
         </ul>
     </div>
 </nav>

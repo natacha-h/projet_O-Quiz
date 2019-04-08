@@ -63,6 +63,13 @@ $router->post('/signin', [
     ]
 );
 
+// la route pour se déconnecter
+$router->get('/logout', [
+    'as' => 'deconnexion',
+    'uses' => 'UserController@logout'
+    ]
+);
+
 // la route pour afficher la page profil du user
 $router->get ('/account', [
     'as' => 'profil',
