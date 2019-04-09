@@ -1,6 +1,6 @@
 <?php
     include __DIR__.'/layout/header.php';
-    //dump($inputValues);
+    dump($inputValues);
 ?>
 <section id="en-tete-quizz">
     <h2> <?= $currentQuiz->title ?>
@@ -21,11 +21,11 @@
             
     <p>by <?= $currentQuiz->author->firstname?> <?= $currentQuiz->author->lastname?></p>
 
-<!-- <?php if(!empty($score)) : ?>
+<?php if(!empty($score)) : ?>
     <section id="score">
         <p><?= $score?> bonnes réponses</p>
     </section>
-<?php endif;?>     -->
+<?php endif;?>    
 
 </section>
 <?php if ($user) : ?>
@@ -42,12 +42,21 @@
 
                             <ul>
                                 <?php foreach($currentQuestion->answer as $currentAnswer): ?>
+                                <?php if($inputValues[$currentQuestion->id] == $currentAnswer->id):?>
                                 <div>
-                                    <input type="radio" name="reponses<?=$currentQuestion->id?>" id="reponse<?=$currentAnswer->id?>" value=<?=$currentAnswer->id?>>
-                                        <label for="reponse<?=$currentAnswer->id?>">
+                                    <input type="radio" name="reponses<?=$currentQuestion->id?>" id="reponse <?=$currentAnswer->id?>" value=<?=$currentAnswer->id?> checked>
+                                        <label for="reponse <?=$currentAnswer->id?>">
                                                 <?= $currentAnswer->description ?>
                                         </label> 
                                 </div>
+                                <?php else: ?>
+                                <div>
+                                    <input type="radio" name="reponses<?=$currentQuestion->id?>" id="reponse <?=$currentAnswer->id?>" value=<?=$currentAnswer->id?>>
+                                        <label for="reponse <?=$currentAnswer->id?>">
+                                                <?= $currentAnswer->description ?>
+                                        </label> 
+                                </div>
+                                <?php endif; ?>
                                 <?php endforeach; ?>
                             </ul> 
 

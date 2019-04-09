@@ -101,25 +101,26 @@ class QuizController extends Controller
         // on initialise le compteur de bonne réponses à 0
         $correctAnswer = 0;
         // récupérer les réponses
-        //$answersList = [];
+        $answersList = [];
         // pour chaque input du formulaire on ajoute sa valeur dans une ligne du tableau de réponses
         foreach ($quizQuestions as $currentQuestion){
-            //$answersList[] = $request->input('reponses'.$currentQuestion->id);
             $answer = $request->input('reponses'.$currentQuestion->id);
+            $answersList[$currentQuestion->id] = $answer;
             // si l'id de la réponse  == l'id de la question
             if($answer == $currentQuestion->id){
-                // $correctAnswer ++
+                // on incrémente $correctAnswer de 1
                 $correctAnswer++;
             }
         }
-        dump($correctAnswer);
+        //dump($correctAnswer);
 
         //on affiche la page avec le résultat
-        return view('quizConsult', [
+        return view('quizResult', [
             'currentQuiz' => Quiz::find($id),
             'questions' => $quizQuestions,
             'score' => $correctAnswer,
-            'user' => UserSession::isConnected()
+            'user' => UserSession::isConnected(),
+            'inputValues' => $answersList
 
         ]);
     }
