@@ -1,6 +1,6 @@
 <?php
     include __DIR__.'/layout/header.php';
-    dump($inputValues);
+    //dump($inputValues);
 ?>
 <section id="en-tete-quizz">
     <h2> <?= $currentQuiz->title ?>
@@ -42,10 +42,17 @@
 
                             <ul>
                                 <?php foreach($currentQuestion->answer as $currentAnswer): ?>
-                                <?php if($inputValues[$currentQuestion->id] == $currentAnswer->id):?>
+                                <?php if($inputValues[$currentQuestion->id] == $currentAnswer->id && ($currentQuestion->id == $currentAnswer->id )):?>
                                 <div>
                                     <input type="radio" name="reponses<?=$currentQuestion->id?>" id="reponse <?=$currentAnswer->id?>" value=<?=$currentAnswer->id?> checked>
-                                        <label for="reponse <?=$currentAnswer->id?>">
+                                        <label for="reponse <?=$currentAnswer->id?>" class="correct_answer">
+                                                <?= $currentAnswer->description ?>
+                                        </label> 
+                                </div>
+                                <?php elseif ($inputValues[$currentQuestion->id] == $currentAnswer->id && ($currentQuestion->id != $currentAnswer->id )): ?>
+                                <div>
+                                    <input type="radio" name="reponses<?=$currentQuestion->id?>" id="reponse <?=$currentAnswer->id?>" value=<?=$currentAnswer->id?> checked>
+                                        <label for="reponse <?=$currentAnswer->id?>" class="wrong_answer">
                                                 <?= $currentAnswer->description ?>
                                         </label> 
                                 </div>
@@ -64,31 +71,10 @@
                     </article>                
                 <?php endforeach; ?> 
             </div>
-            <button type="submit" class="btn btn-info">Soumettre le quiz</button>
         </form>
 
 <?php else: ?>
 
-<div class="row">
-    <?php foreach($questions as $currentQuestion): ?>
-
-    <article class="card m-2">
-        <div class="card-body">
-            <span class="level level--<?= $currentQuestion->level->getCssClass()?>"><?= $currentQuestion->level->name?></span>
-
-            <div class="question__question"><?= $currentQuestion->question ?></div>
-
-            <ul>
-                <?php //$currentAnswerList = $answers[$currentQuestion->id]; 
-                foreach($currentQuestion->answer as $currentAnswer): ?>
-                <li><?=  $currentAnswer->description ?> </li>
-                <?php endforeach; ?>
-            </ul> 
-
-        </div>
-    </article>
-    <?php endforeach; ?>   
-</div>
 
 <?php endif; ?>
 

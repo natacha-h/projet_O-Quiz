@@ -88,6 +88,15 @@ form {
     font-weight: bold;
 }
 
+.correct_answer{
+    font-weight: bold;
+    color: #078;
+}
+
+.wrong_answer{
+    font-weight: bold;
+    color: red;
+}
 .level {
     font-size: 0.8em;
 }
