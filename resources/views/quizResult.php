@@ -27,7 +27,7 @@
 <?php endif;?>    
 
 </section>
-<?php if ($user) : ?>
+<?php if ($connectedUser) : ?>
         <form action="" method="post">
 
             <div class="row">

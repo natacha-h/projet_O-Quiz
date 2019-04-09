@@ -1,5 +1,6 @@
 <?php
     //dump($inputValues);
+    
 ?>
 <section id="en-tete-quizz">
     <h2> <?= $currentQuiz->title ?>
@@ -27,7 +28,7 @@
 <?php endif;?>     -->
 
 </section>
-<?php if ($user) : ?>
+<?php if ($connectedUser) : ?>
         <form action="" method="post">
 
             <div class="row">
@@ -40,7 +41,7 @@
                             <div class="question__question"><?= $currentQuestion->question ?></div>
 
                             <ul>
-                                <?php foreach($currentQuestion->answer as $currentAnswer): ?>
+                                <?php foreach(($currentQuestion->answer)->shuffle() as $currentAnswer):?>
                                 <div>
                                     <input type="radio" name="reponses<?=$currentQuestion->id?>" id="reponse<?=$currentAnswer->id?>" value=<?=$currentAnswer->id?>>
                                         <label for="reponse<?=$currentAnswer->id?>">

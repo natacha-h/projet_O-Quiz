@@ -55,11 +55,13 @@ class QuizController extends Controller
         */
 
         // récupérer les réponses de chaque question
-        $answersList = [];
-        foreach($questions as $currentQuestion){
-            $question = Question::find($currentQuestion->id);
-            $answersList [$currentQuestion->id]= $question->answer;
-        }
+        // $answersList = [];
+        // foreach($questions as $currentQuestion){
+        //     $question = Question::find($currentQuestion->id);
+        //     $answersList [$currentQuestion->id]= $question->answer;
+        // }
+        // $answersList->toArray();
+        // dump($answersList); exit;
         /*
         // récupérer les tags du quiz
         $tagList = [];
@@ -81,7 +83,7 @@ class QuizController extends Controller
                 'questions' => $questions,
                 //'answers' => $answersList,
                 //'taglist' => $tagList
-                'user' => UserSession::isConnected()
+                //'user' => UserSession::isConnected()
             ]);
         } else {
             // on lance NotDoundHttpException afin d'afficher la page 404
@@ -119,7 +121,7 @@ class QuizController extends Controller
             'currentQuiz' => Quiz::find($id),
             'questions' => $quizQuestions,
             'score' => $correctAnswer,
-            'user' => UserSession::isConnected(),
+           // 'user' => UserSession::isConnected(),
             'inputValues' => $answersList
 
         ]);
