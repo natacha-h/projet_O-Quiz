@@ -20,10 +20,17 @@
     </section >
             
     <p>by <?= $currentQuiz->author->firstname?> <?= $currentQuiz->author->lastname?></p>
-           
+
+<?php if(!empty($score)) : ?>
+    <section id="score">
+        <p><?= $score?> bonnes réponses</p>
+    </section>
+<?php endif;?>    
+
 </section>
 <?php if ($user) : ?>
-    
+    <form action="" method="post">
+
         <div class="row">
     <?php foreach($questions as $currentQuestion): ?>
 
@@ -37,7 +44,7 @@
                 <?php //$currentAnswerList = $answers[$currentQuestion->id]; 
                 foreach($currentQuestion->answer as $currentAnswer): ?>
                 <div>
-                    <input type="radio" name="reponses" id="reponse <?=$currentAnswer->id?>" value="option<?=$currentAnswer->id?>">
+                    <input type="radio" name="reponses<?=$currentQuestion->id?>" id="reponse <?=$currentAnswer->id?>" value=<?=$currentAnswer->id?>>
                         <label for="reponse <?=$currentAnswer->id?>">
                                 <?= $currentAnswer->description ?>
                         </label> 
@@ -47,8 +54,12 @@
 
         </div>
     </article>
+
+    
     <?php endforeach; ?>   
 </div>
+<button type="submit" class="btn btn-info">Soumettre le quiz</button>
+</form>
 
 
 <?php else: ?>

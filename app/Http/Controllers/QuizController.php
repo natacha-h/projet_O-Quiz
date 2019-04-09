@@ -90,7 +90,37 @@ class QuizController extends Controller
         
     }
 
-    public function quizPost(){
-        // envoyer en DB l'ID du quiz à afficher
+    public function quizPost(Request $request, $id)
+    {
+        // récupérer l'id du quiz
+        $quizId = intval($id);
+        //dump($quizId);
+        // récupérer les questions du quiz
+        $quizQuestions = Quiz::find($id)->questions;
+        //dump($quizQuestions);
+        // on initialise le compteur de bonne réponses à 0
+        $correctAnswer = 0;
+        // récupérer les réponses
+        //$answersList = [];
+        // pour chaque input du formulaire on ajoute sa valeur dans une ligne du tableau de réponses
+        foreach ($quizQuestions as $currentQuestion){
+            //$answersList[] = $request->input('reponses'.$currentQuestion->id);
+            $answer = $request->input('reponses'.$currentQuestion->id);
+            // si l'id de la réponse  == l'id de la question
+            if($answer == $currentQuestion->id){
+                // $correctAnswer ++
+                $correctAnswer++;
+            }
+        }
+        dump($correctAnswer);
+
+        //on affiche la page avec le résultat
+        return view('quizConsult', [
+            'currentQuiz' => Quiz::find($id),
+            'questions' => $quizQuestions,
+            'score' => $correctAnswer,
+            'user' => UserSession::isConnected()
+
+        ]);
     }
 }
