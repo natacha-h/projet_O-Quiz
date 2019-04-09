@@ -1,5 +1,4 @@
 <?php
-    include __DIR__.'/layout/header.php';
     //dump($inputValues);
 ?>
 <section id="en-tete-quizz">
@@ -84,7 +83,3 @@
 <?php endif; ?>
 
 </main>
-
-<?php
-    include __DIR__.'/layout/footer.php';
-?>

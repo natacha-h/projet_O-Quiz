@@ -20,7 +20,7 @@ class UserController extends Controller
 
     public function signup()
     {
-        return view('signup', [
+        return $this->show('signup', [
             'inputValues' => [
                 'firstname' =>'',
                 'lastname' => '',
@@ -120,7 +120,7 @@ class UserController extends Controller
         // si il y a des erreurs
         else {
             // on les affiche dans le formulaire
-            return view('signup', [
+            return $this->show('signup', [
                 'errorList' => $error,
                 'inputValues' => [
                     'firstname' => $firstName,
@@ -137,7 +137,7 @@ class UserController extends Controller
     // méthode pour la route /signin
     public function signin()
     {
-        return view('signin');
+        return $this->show('signin');
     }
 
     // méthode pour la route /signin en POST
@@ -199,7 +199,7 @@ class UserController extends Controller
     }
     // si on arrive ici c'est qu'il y a eu une erreur détectée, car sinon ça aurait redirigé le client
     // donc on affiche les erreurs
-    return view('signin', [
+    return $this->show('signin', [
         'errorList' => $error,
         'inputValues'=> [
             'email'=> $email
@@ -209,7 +209,7 @@ class UserController extends Controller
 
     public function profile()
     {
-        return view('profile', [
+        return $this->show('profile', [
             'user' => UserSession::getUser()
         ]);
     }

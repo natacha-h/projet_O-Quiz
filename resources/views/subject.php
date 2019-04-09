@@ -1,6 +1,4 @@
-<?php
-    include __DIR__.'/layout/header.php';
-?>
+
             <section id="intro">
                 <h2> Les différents sujets </h2>
             </section>
@@ -15,7 +13,3 @@
                 <?php endforeach; ?>
             </section>
         </main>
-
-<?php
-    include __DIR__.'/layout/footer.php';
-?>

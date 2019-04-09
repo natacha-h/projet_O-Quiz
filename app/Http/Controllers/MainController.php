@@ -24,7 +24,7 @@ class MainController extends Controller
         // exit;
         
         // afficher les titres des quiz sur la home
-        return view('home', [
+        return $this->show('home', [
             'quizList' => $quizList
         ]);
     }

@@ -1,6 +1,4 @@
-<?php
-    include __DIR__.'/layout/header.php';
-?>
+
             <div>
                 <h2> Connectez-vous </h2>
 
@@ -31,7 +29,3 @@
             </form>
             
         </main>
-
-<?php
-    include __DIR__.'/layout/footer.php';
-?>

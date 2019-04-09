@@ -1,6 +1,4 @@
-<?php
-    include __DIR__.'/layout/header.php';
-?>
+
             <section id="intro">
                 <h2> Bienvenue sur O'Quiz </h2>
                 <p>
@@ -25,7 +23,3 @@
             </section>
             
         </main>
-
-<?php
-    include __DIR__.'/layout/footer.php';
-?>

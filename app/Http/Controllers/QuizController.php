@@ -75,7 +75,7 @@ class QuizController extends Controller
         // afficher les questions sur la page du quiz
 
 
-            return view('quizConsult', [
+            return $this->show('quizConsult', [
                 'currentQuiz' => $currentQuiz,
                 //'author' => $author,
                 'questions' => $questions,
@@ -115,7 +115,7 @@ class QuizController extends Controller
         //dump($correctAnswer);
 
         //on affiche la page avec le résultat
-        return view('quizResult', [
+        return $this->show('quizResult', [
             'currentQuiz' => Quiz::find($id),
             'questions' => $quizQuestions,
             'score' => $correctAnswer,

@@ -11,16 +11,23 @@
             <li class="nav-item">
                 <a class="nav-link" href="<?= route('sujet') ?>">Sujets</a>
             </li>
+        <?php if($connectedUser) : ?>
+        <li class="nav-item">
+                <a class="nav-link" href="<?= route('profil') ?>">Mon compte</a>
+            </li>
+        <?php else: ?>
             <li class="nav-item">
                 <a class="nav-link" href="<?= route('connexion') ?>">Mon compte</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="<?= route('inscription') ?>">S'incrire</a>
             </li>
+        <?php endif; ?>
+        <?php if($connectedUser) :?>
             <li class="nav-item">
                 <a class="nav-link" href="<?= route('deconnexion') ?>">Déconnexion</a>
             </li>
-
+        <?php endif; ?>
         </ul>
     </div>
 </nav>
