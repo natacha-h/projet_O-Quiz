@@ -27,7 +27,7 @@ class TagController extends Controller
         // dump($tagsList);
         // exit;
 
-        return view('subject', [
+        return $this->show('subject', [
             'tags' => $tagsList
         ]);
     }
@@ -49,7 +49,7 @@ class TagController extends Controller
         // récupérer les quiz correspondant à l'id du tag
         //$quizList
 
-        return view('quizPerSubject', [
+        return $this->show('quizPerSubject', [
             'tags' =>$tagsList,
             'currentTag' => $currentTag
         ]);

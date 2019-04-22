@@ -21,12 +21,6 @@
             
     <p>by <?= $currentQuiz->author->firstname?> <?= $currentQuiz->author->lastname?></p>
 
-<!-- <?php if(!empty($score)) : ?>
-    <section id="score">
-        <p><?= $score?> bonnes réponses</p>
-    </section>
-<?php endif;?>     -->
-
 </section>
 <?php if ($connectedUser) : ?>
         <form action="" method="post">

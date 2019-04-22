@@ -22,7 +22,7 @@
 
 <?php if(!empty($score)) : ?>
     <section id="score">
-        <p><?= $score?> bonnes réponses</p>
+        <p>Vous avez <?= $score?> bonnes réponses</p>
     </section>
 <?php endif;?>    
 
@@ -31,7 +31,7 @@
         <form action="" method="post">
 
             <div class="row">
-                <?php foreach($questions as $currentQuestion): ?>
+                <?php foreach($questions as $currentQuestion): //dump($currentQuestion); ?>
 
                     <article class="card m-2">
                         <div class="card-body">
@@ -41,31 +41,28 @@
 
                             <ul>
                                 <?php foreach($currentQuestion->answer as $currentAnswer): ?>
-                                <?php if($inputValues[$currentQuestion->id] == $currentAnswer->id && ($currentQuestion->id == $currentAnswer->id )):?>
-                                <div>
-                                    <input type="radio" name="reponses<?=$currentQuestion->id?>" id="reponse <?=$currentAnswer->id?>" value=<?=$currentAnswer->id?> checked>
-                                        <label for="reponse <?=$currentAnswer->id?>" class="correct_answer">
-                                                <?= $currentAnswer->description ?>
-                                        </label> 
-                                </div>
-                                <?php elseif ($inputValues[$currentQuestion->id] == $currentAnswer->id && ($currentQuestion->id != $currentAnswer->id )): ?>
-                                <div>
-                                    <input type="radio" name="reponses<?=$currentQuestion->id?>" id="reponse <?=$currentAnswer->id?>" value=<?=$currentAnswer->id?> checked>
-                                        <label for="reponse <?=$currentAnswer->id?>" class="wrong_answer">
-                                                <?= $currentAnswer->description ?>
-                                        </label> 
-                                </div>
-                                <?php else: ?>
-                                <div>
-                                    <input type="radio" name="reponses<?=$currentQuestion->id?>" id="reponse <?=$currentAnswer->id?>" value=<?=$currentAnswer->id?>>
-                                        <label for="reponse <?=$currentAnswer->id?>">
-                                                <?= $currentAnswer->description ?>
-                                        </label> 
-                                </div>
-                                <?php endif; ?>
+                                    <!-- si la réponse est correcte on lui applique le style correct_answer -->
+                                    <?php if($inputValues[$currentQuestion->id] == $currentAnswer->id && ($currentQuestion->id == $currentAnswer->id )):?>
+                                        <li class="correct_answer">                                        
+                                    <!-- sinon si la réponse est fausse on lui applique le style wrong_answer -->
+                                    <?php elseif ($inputValues[$currentQuestion->id] == $currentAnswer->id && ($currentQuestion->id != $currentAnswer->id )): ?>
+                                        <li class="wrong_answer">  
+                                    <!-- on indique en vert la bonne réponse -->
+                                    <?php elseif ($currentQuestion->id == $currentAnswer->id ): ?>
+                                        <li style="color: green;">
+                                    <?php else: ?>
+                                        <li>
+                                    <?php endif; ?>
+                                            <?= $currentAnswer->description ?>                                                
+                                        </li>
                                 <?php endforeach; ?>
                             </ul> 
-
+                                    
+                            <!-- on affiche l'information sur le sujet -->
+                            <p>
+                                Le saviez-vous ? : <br>
+                                <?=$currentQuestion->anecdote?>
+                            </p>
                         </div>
                     </article>                
                 <?php endforeach; ?> 

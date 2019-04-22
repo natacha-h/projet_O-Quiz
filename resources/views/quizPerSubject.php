@@ -1,6 +1,4 @@
-<?php
-    include __DIR__.'/layout/header.php';
-?>
+
             <section id="intro">
                 <h2> <?= $currentTag->name ?></h2>
             </section>
@@ -20,6 +18,3 @@
             
         </main>
 
-<?php
-    include __DIR__.'/layout/footer.php';
-?>

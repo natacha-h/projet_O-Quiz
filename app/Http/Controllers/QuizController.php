@@ -86,7 +86,7 @@ class QuizController extends Controller
                 //'user' => UserSession::isConnected()
             ]);
         } else {
-            // on lance NotDoundHttpException afin d'afficher la page 404
+            // on lance NotFoundHttpException afin d'afficher la page 404
             abort(404);
         }
         

@@ -1,7 +1,9 @@
 <?php
 
 require_once __DIR__.'/../vendor/autoload.php';
+
 session_start();
+
 (new Laravel\Lumen\Bootstrap\LoadEnvironmentVariables(
     dirname(__DIR__)
 ))->bootstrap();

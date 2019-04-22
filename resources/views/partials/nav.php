@@ -11,7 +11,7 @@
             <li class="nav-item">
                 <a class="nav-link" href="<?= route('sujet') ?>">Sujets</a>
             </li>
-        <?php if($connectedUser) : ?>
+        <?php if($connectedUser) :?>
         <li class="nav-item">
                 <a class="nav-link" href="<?= route('profil') ?>">Mon compte</a>
             </li>
