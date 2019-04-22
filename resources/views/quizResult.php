@@ -49,7 +49,7 @@
                                         <li class="wrong_answer">  
                                     <!-- on indique en vert la bonne réponse -->
                                     <?php elseif ($currentQuestion->id == $currentAnswer->id ): ?>
-                                        <li style="color: green;">
+                                        <li style="color: #078;">
                                     <?php else: ?>
                                         <li>
                                     <?php endif; ?>
@@ -59,8 +59,7 @@
                             </ul> 
                                     
                             <!-- on affiche l'information sur le sujet -->
-                            <p>
-                                Le saviez-vous ? : <br>
+                            <p class="question__info">
                                 <?=$currentQuestion->anecdote?>
                             </p>
                         </div>
