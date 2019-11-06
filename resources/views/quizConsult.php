@@ -1,5 +1,4 @@
 <?php
-    //dump($inputValues);
     
 ?>
 <section id="en-tete-quizz">
@@ -54,6 +53,7 @@
 
 <?php else: ?>
 
+<p class="alert alert-warning">Vous devez être connecté pour pouvoir répondre au quiz</p>
 <div class="row">
     <?php foreach($questions as $currentQuestion): ?>
 
@@ -64,7 +64,7 @@
             <div class="question__question"><?= $currentQuestion->question ?></div>
 
             <ul>
-                <?php //$currentAnswerList = $answers[$currentQuestion->id]; 
+                <?php 
                 foreach($currentQuestion->answer as $currentAnswer): ?>
                 <li><?=  $currentAnswer->description ?> </li>
                 <?php endforeach; ?>

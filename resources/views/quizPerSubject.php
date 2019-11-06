@@ -3,7 +3,7 @@
                 <h2> <?= $currentTag->name ?></h2>
             </section>
 
-            <section id="display-quiz" class="row justify-content-between">
+            <section id="display-quiz" class="row justify-content-around">
 
             <?php foreach($currentTag->quiz as $quiz): ?>
                 <article class="card m-2" >

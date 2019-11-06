@@ -8,12 +8,9 @@ orange : #FF970F
 */
 body {
     background-color: #21295C ;
-    /* background: linear-gradient(#234B9A, transparent), linear-gradient(transparent, #078); */
-    /* background-attachment: fixed; */
-
 }
 .jumbotron{
-    background-color: #ff970f;
+    background-color: #FF970F;
     margin: -1.25rem;
     margin-bottom: 0;
 }
@@ -27,21 +24,18 @@ body {
     margin: 0 -1.25rem 1rem;
     background-color: #CA054D;
 }
-
 h1 {
     font-size: 3.5em;
     margin: 0.325rem 0 1rem;
     color: #fffffa;
     text-align: center;
 }
-
 h2 {
     font-size: 2.4em;
     text-align: center;
     margin: 0.325rem 0 0.625rem;
     color:#222;
 }
-
 h3 {
     font-size: 2em;
     margin: 0.325rem 0 0.75rem;
@@ -69,8 +63,9 @@ h6{
     /* width: 900px; */
     max-width: 85vw;
     margin: 0 auto;
-    background-color: #fffffa9f;
+    background-color: #fffffacc;
     padding: 1.25rem;
+    box-shadow: 0 0 20px 10px rgba(255, 151, 15, 0.411);
     /* margin-top: 0.625rem; */
 }
 
@@ -80,6 +75,7 @@ h6{
 
 .row {
     display: flex;
+    justify-content: space-around;
 }
 
 .card {
@@ -117,7 +113,7 @@ form {
 
 .correct_answer{
     font-weight: bold;
-    color: #078;
+    color: lightgreen;
 }
 
 .wrong_answer{
@@ -126,18 +122,21 @@ form {
 }
 .level {
     font-size: 0.8em;
+    background-color: #fffffa;
+    border-radius: 15px;
+    padding: .3rem;
 }
 
 .level--beginner {
-    color: darkgreen;
+    color: #21295C;
 }
 
 .level--medium {
-    color: darkgoldenrod;
+    color: #ff970f;
 }
 
 .level--expert {
-    color: darkred;
+    color: #CA054D;
 }
 
 .question__info {
