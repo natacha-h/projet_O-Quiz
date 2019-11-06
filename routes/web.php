@@ -19,11 +19,6 @@ $router->get('/', [
 );
 
 // les routes en get et post pour afficher un quiz selon son id
-// on contraint le contenu attendu pour la partie dynamique "id"
-// après le ":", c'est une expression régulière
-// [0-9] = caractère de 0 à 9
-// + = au moins une fois
-// pour plus de détail sur les expressions régulières => https://regex101.com/
 $router->get('/quiz/{id:[0-9]+}', [ 
     'as' => 'quiz',
     'uses' => 'QuizController@quiz'

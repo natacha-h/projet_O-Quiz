@@ -4,13 +4,14 @@ blanc cassé : #FFFFFA
 bleu-indigo foncé : #21295C
 framboise : #CA054D
 orange : #FF970F
+bleu pâle : #AFD0FF
 
 */
 body {
-    background-color: #21295C ;
+    background-color: #087E8B ;
 }
 .jumbotron{
-    background-color: #FF970F;
+    background-color: #21295C;
     margin: -1.25rem;
     margin-bottom: 0;
 }
@@ -22,7 +23,7 @@ body {
 .navbar{
     /* margin-left :-1.25rem; */
     margin: 0 -1.25rem 1rem;
-    background-color: #CA054D;
+    background-color: #FF970F;
 }
 h1 {
     font-size: 3.5em;
@@ -44,32 +45,27 @@ h3 {
     margin: 0.325rem 0 0.75rem;
     color: darkcyan;
 }
-
 p {
     margin: 0.625rem 0;
 }
-
 a {
     color: #ff970f;
 }
 
 a:hover{
-    color: #21295C;
+    color: #CA054D;
     text-decoration: none;
 }
-
-h6{
+h6, .card-text, .answers-list, .card-body label, .question__info {
     color: #fffffa;
 }
 
 .container {
-    /* width: 900px; */
     max-width: 85vw;
     margin: 0 auto;
-    background-color: #fffffacc;
+    background-color: #AFD0FF;
     padding: 1.25rem;
-    box-shadow: 0 0 20px 10px rgba(255, 151, 15, 0.411);
-    /* margin-top: 0.625rem; */
+    /* box-shadow: 0 0 20px 10px rgba(255, 151, 15, 0.411); */
 }
 
 #intro {
@@ -83,7 +79,7 @@ h6{
 
 .card {
     width: 30%;
-    background-color: #087E8B;
+    background-color: #21295C;
     border: none;
 }
 
@@ -112,6 +108,7 @@ form {
 .question__question {
     margin: 0.625rem 0;
     font-weight: bold;
+    color: #fffffa;
 }
 
 .correct_answer{

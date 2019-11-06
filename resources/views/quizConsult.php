@@ -66,7 +66,7 @@
             <ul>
                 <?php 
                 foreach($currentQuestion->answer as $currentAnswer): ?>
-                <li><?=  $currentAnswer->description ?> </li>
+                <li class="answers-list"><?=  $currentAnswer->description ?> </li>
                 <?php endforeach; ?>
             </ul> 
 

@@ -1,5 +1,4 @@
 <?php
-    //dump($inputValues);
 ?>
 <section id="en-tete-quizz">
     <h2> <?= $currentQuiz->title ?>
@@ -31,7 +30,7 @@
         <form action="" method="post">
 
             <div class="row">
-                <?php foreach($questions as $currentQuestion): //dump($currentQuestion); ?>
+                <?php foreach($questions as $currentQuestion): ?>
 
                     <article class="card m-2">
                         <div class="card-body">
@@ -51,7 +50,7 @@
                                     <?php elseif ($currentQuestion->id == $currentAnswer->id ): ?>
                                         <li style="color: #078;">
                                     <?php else: ?>
-                                        <li>
+                                        <li class="answers-list">
                                     <?php endif; ?>
                                             <?= $currentAnswer->description ?>                                                
                                         </li>
