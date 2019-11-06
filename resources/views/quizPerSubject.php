@@ -9,8 +9,8 @@
                 <article class="card m-2" >
                         <div class="card-body">
                             <h5 class="card-title"><a href="<?= route('quiz', ['id' => $quiz->id]) ?>"><?=$quiz->title ?></a></h5>
-                            <h6 class="card-subtitle mb-2 text-muted"><?=$quiz->description ?></h6>
-                            <p class="card-text">by <?=$quiz->app_users_id ?></p>
+                            <h6 class="card-subtitle mb-2"><?=$quiz->description ?></h6>
+                            <p class="card-text">by <?=$quiz->author->firstname ?> <?=$quiz->author->lastname ?> </p>
                         </div>
                     </article>
             <?php endforeach; ?>

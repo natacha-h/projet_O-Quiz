@@ -1,3 +1,4 @@
+</main>
 </body>
 
 <!-- import des fichiers js de boostrap -->

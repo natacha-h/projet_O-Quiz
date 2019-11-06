@@ -1,20 +1,37 @@
+/* Couleurs
+bleu canard : #087E8B
+blanc cassé : #FFFFFA
+bleu-indigo foncé : #21295C
+framboise : #CA054D
+orange : #FF970F
+
+*/
 body {
-    /* background-color: rgb(89, 149, 199) ; */
-    background: linear-gradient(#234B9A, transparent), linear-gradient(transparent, #078);
-    background-attachment: fixed;
+    background-color: #21295C ;
+    /* background: linear-gradient(#234B9A, transparent), linear-gradient(transparent, #078); */
+    /* background-attachment: fixed; */
 
 }
-.navbar {
-    margin-left :-1.25rem;
-    margin-top: -1.25rem;
-    background-color: none;
-
+.jumbotron{
+    background-color: #ff970f;
+    margin: -1.25rem;
+    margin-bottom: 0;
+}
+.lead{
+    text-align: center;
+    color: #fffffa;
+    font-size: 1.2em;
+}
+.navbar{
+    /* margin-left :-1.25rem; */
+    margin: 0 -1.25rem 1rem;
+    background-color: #CA054D;
 }
 
 h1 {
     font-size: 3.5em;
     margin: 0.325rem 0 1rem;
-    color: black;
+    color: #fffffa;
     text-align: center;
 }
 
@@ -35,14 +52,24 @@ p {
     margin: 0.625rem 0;
 }
 
-/* a {
-    color: yellowgreen;
-} */
+a {
+    color: #ff970f;
+}
+
+a:hover{
+    color: #21295C;
+    text-decoration: none;
+}
+
+h6{
+    color: #fffffa;
+}
 
 .container {
     /* width: 900px; */
-    margin: auto;
-    /* background-color: #234B78; */
+    max-width: 85vw;
+    margin: 0 auto;
+    background-color: #fffffa9f;
     padding: 1.25rem;
     /* margin-top: 0.625rem; */
 }
@@ -57,14 +84,14 @@ p {
 
 .card {
     width: 30%;
-    background-color: #EEE;
+    background-color: #087E8B;
     border: none;
 }
 
 .tag{
     margin: .3em;
     padding: .3em .6em;
-    background-color: #234B9A;
+    background-color: #21295C;
     border-radius: 5px;
     color: white;
     font-weight: normal;
@@ -123,15 +150,16 @@ form {
 }
 
 .btn {
-    /* display: block;
+    /* 
     width: 100%;
-    margin: 0.625rem 0;
-    text-align: center;
     color: #009999;
-    border: 2px solid #118888;
-    background-color: #078;
     font-size: 1.4em;
     font-weight: bold;
     padding: 0.325rem 0; */
+    display: block;
+    margin: 0.625rem auto;
+    text-align: center;
+    background-color: #CA054D;
+    border: 2px solid #CA054D;
     cursor: pointer;
 }

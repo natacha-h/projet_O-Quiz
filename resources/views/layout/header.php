@@ -18,8 +18,11 @@
     </head>
     <body>
         <main class="container">
-            <h1>o'Quiz</h1>
-
-<?php
+        <div class="jumbotron jumbotron-fluid">
+            <h1>O'Quiz</h1>
+            <p class="lead">Le site qui va vous échauffer les neurones.</p>
+        </div>
+        
+        <?php
 include __DIR__.'/../partials/nav.php';
 ?>

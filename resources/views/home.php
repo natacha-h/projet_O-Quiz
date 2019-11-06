@@ -13,7 +13,7 @@
                     <article class="card m-2" >
                         <div class="card-body">
                             <h5 class="card-title"><a href="<?= route('quiz', ['id' => $currentQuiz->id]) ?>"><?=$currentQuiz->title ?></a></h5>
-                            <h6 class="card-subtitle mb-2 text-muted"><?=$currentQuiz->description ?></h6>
+                            <h6 class="card-subtitle mb-2"><?=$currentQuiz->description ?></h6>
                             <p class="card-text">by <?=$currentQuiz->author->firstname?> <?= $currentQuiz->author->lastname ?></p>
                         </div>
                     </article>
@@ -22,4 +22,4 @@
                     
             </section>
             
-        </main>
+     <!--   </main> -->
