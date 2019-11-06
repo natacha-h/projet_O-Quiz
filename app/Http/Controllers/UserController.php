@@ -40,11 +40,9 @@ class UserController extends Controller
 
             // si le prénom est rempli, on le stocke dans $firstName, sinon on ajoute une ligne dans le tableau d'erreur 
             $firstName = (!empty($_POST['firstname'])) ? trim($_POST['firstname']): $error[]= 'Merci d\'indiquer votre prénom';
-            //dump($firstName);
 
             // si le nom est rempli, on le stocke dans $lastName, sinon on ajoute une ligne dans le tableau d'erreur 
             $lastName = (!empty($_POST['lastname'])) ? trim($_POST['lastname']): $error[]= 'Merci d\'indiquer votre nom';
-            //dump($lastName);
 
             // si l'email est rempli
             if(!empty($_POST['email'])){
@@ -53,8 +51,6 @@ class UserController extends Controller
                 if(filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)){
                     // on vérifie que l'email n'est pas déjà en BD
                     $checkEmailList = User::all();
-                    // dump($checkEmailList);
-                    // exit;
                     foreach($checkEmailList as $registeredEmail){
                         // si l'email est déjà en BD
                         if ($_POST['email'] == $registeredEmail->email){
@@ -79,7 +75,6 @@ class UserController extends Controller
                 $error[]= 'Merci d\'indiquer une adresse e-mail valide';
                 $emailAddress = '';
             }
-            //dump($emailAddress);
 
             // si password et password vérif sont remplis
             if ((!empty($_POST['password'])) && (!empty($_POST['password_verif']))){
@@ -99,11 +94,9 @@ class UserController extends Controller
                 // on l'ajoute en erreur
                 $error[]= 'Merci de renseigner un mot de passe';
                 $password = '';
-            }
-            //dump($password);
-  
+            }  
         }
-        // On vérifie si il $error est vide
+        // On vérifie si $error est vide
         if (count($error) == 0) {
             // on ajoute l'utilisateur en BD
             $newUser = new User();
@@ -145,10 +138,8 @@ class UserController extends Controller
     {
         // on récupère les données
         $email = $request->input('email', '');
-        //dump($email); exit;
         $password = $request->input('password');
-        
-        
+              
         // on crée un tableau d'erreurs
         $error = [];
         // si l'email n'est pas vide
@@ -161,15 +152,12 @@ class UserController extends Controller
             if(filter_var($email, FILTER_VALIDATE_EMAIL) === false) {
                 $error[] = 'Le format de l\'email est incorrect';
             
-        }
-            
+        }           
         // si le mot de passe est vide
         if (empty($password)){
             // on indique l'erreur
             $error[] = 'Le mot de passe est vide';
         }
-        //dump($error); exit;
-
         // si il  n'y a pas d'erreur
         if (empty($error)){
             // on récupère le Model User en BD
@@ -192,10 +180,8 @@ class UserController extends Controller
             } else {
                 // on ajoute le message d'erreur
                 $error[]= 'L\'email et/ou le mot de passe est incorrect';
-
             }
-        }  
-        
+        }          
     }
     // si on arrive ici c'est qu'il y a eu une erreur détectée, car sinon ça aurait redirigé le client
     // donc on affiche les erreurs

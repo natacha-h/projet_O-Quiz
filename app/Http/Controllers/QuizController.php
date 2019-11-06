@@ -26,10 +26,8 @@ class QuizController extends Controller
 
         // on récupère l'id du quiz et on le convertit en int
         $id = intval($id);
-        //dump($id); exit;
         // récupérer les infos du quiz
         $currentQuiz = Quiz::find($id);
-        //dump($currentQuiz); exit;
 
         // On récupère l'id du user qui a créé le quiz
         $userId= $currentQuiz->app_users_id;
@@ -44,46 +42,20 @@ class QuizController extends Controller
         
         // récupérer les questions du quiz concerné
         $questions=Quiz::find($id)->questions;
-        //dump($questions); exit;
 
-        /* 
-        *********** Solution sans relationship, en utilisant le query builder **************
+        /* *********** Solution sans relationship, en utilisant le query builder **************
        
         $questiontList = Question::where('quizzes_id', $id)->get();
 
         /!\ ne pas oublier la méthode get() à la fin car c'est un query builder. Si on oublie le get() on aura rien à la fin
         */
 
-        // récupérer les réponses de chaque question
-        // $answersList = [];
-        // foreach($questions as $currentQuestion){
-        //     $question = Question::find($currentQuestion->id);
-        //     $answersList [$currentQuestion->id]= $question->answer;
-        // }
-        // $answersList->toArray();
-        // dump($answersList); exit;
-        /*
-        // récupérer les tags du quiz
-        $tagList = [];
-        foreach ($currentQuiz->tags as $tag) {
-            $tagList[]= $tag->name; 
-        }
-        */
-
-        // dump($tagList);
-        // exit;
-        //dump($tags); exit;
-        //dump($answersList); exit;
         // afficher les questions sur la page du quiz
 
 
             return $this->show('quizConsult', [
                 'currentQuiz' => $currentQuiz,
-                //'author' => $author,
                 'questions' => $questions,
-                //'answers' => $answersList,
-                //'taglist' => $tagList
-                //'user' => UserSession::isConnected()
             ]);
         } else {
             // on lance NotFoundHttpException afin d'afficher la page 404
@@ -96,10 +68,8 @@ class QuizController extends Controller
     {
         // récupérer l'id du quiz
         $quizId = intval($id);
-        //dump($quizId);
         // récupérer les questions du quiz
         $quizQuestions = Quiz::find($id)->questions;
-        //dump($quizQuestions);
         // on initialise le compteur de bonne réponses à 0
         $correctAnswer = 0;
         // récupérer les réponses
@@ -114,16 +84,13 @@ class QuizController extends Controller
                 $correctAnswer++;
             }
         }
-        //dump($correctAnswer);
 
         //on affiche la page avec le résultat
         return $this->show('quizResult', [
             'currentQuiz' => Quiz::find($id),
             'questions' => $quizQuestions,
             'score' => $correctAnswer,
-           // 'user' => UserSession::isConnected(),
             'inputValues' => $answersList
-
         ]);
     }
 }

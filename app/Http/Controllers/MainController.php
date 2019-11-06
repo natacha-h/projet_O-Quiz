@@ -20,8 +20,6 @@ class MainController extends Controller
     {
         // je récupère les quiz en DB
         $quizList = Quiz::all();
-        // dump($quizList);
-        // exit;
         
         // afficher les titres des quiz sur la home
         return $this->show('home', [

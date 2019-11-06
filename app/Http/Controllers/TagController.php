@@ -24,8 +24,6 @@ class TagController extends Controller
     {
         // récupérer tous les tags en DB
         $tagsList = Tag::all();
-        // dump($tagsList);
-        // exit;
 
         return $this->show('subject', [
             'tags' => $tagsList
@@ -40,14 +38,6 @@ class TagController extends Controller
         $tagsList = Tag::all();
         // récupérer le tag actuel
         $currentTag = Tag::find($id);
-        //dump($currentTag);
-        // exit;
-        // foreach($currentTag->quiz as $quiz){
-        //     dump($quiz);
-        // }
-        // exit;
-        // récupérer les quiz correspondant à l'id du tag
-        //$quizList
 
         return $this->show('quizPerSubject', [
             'tags' =>$tagsList,

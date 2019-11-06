@@ -2,7 +2,7 @@
     
 ?>
 <section id="en-tete-quizz">
-    <h2> <?= $currentQuiz->title ?>
+    <h2> <?= $currentQuiz->title ?> <br>
         <span><?= count($questions) ?> questions</span>
     </h2>
                        
