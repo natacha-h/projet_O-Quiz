@@ -17,7 +17,7 @@
         <title>O'Quiz</title>
     </head>
     <body>
-        <main class="container">
+        <main class="container-fluid">
         <div class="jumbotron jumbotron-fluid">
             <h1>O'Quiz</h1>
             <p class="lead">Le site qui va vous échauffer les neurones.</p>
@@ -26,3 +26,4 @@
         <?php
 include __DIR__.'/../partials/nav.php';
 ?>
+<div id='main-content'>

@@ -37,37 +37,23 @@ class QuizController extends Controller
         
         // on test que l'id existe en DB
         // => find return "null" s'il ne trouve pas la ligne
-        if (!empty($currentQuiz)) {
+        if (!empty($currentQuiz)) {       
+            // récupérer les questions du quiz concerné
+            $questions=Quiz::find($id)->questions;
 
-        
-        // récupérer les questions du quiz concerné
-        $questions=Quiz::find($id)->questions;
-
-        /* *********** Solution sans relationship, en utilisant le query builder **************
-       
-        $questiontList = Question::where('quizzes_id', $id)->get();
-
-        /!\ ne pas oublier la méthode get() à la fin car c'est un query builder. Si on oublie le get() on aura rien à la fin
-        */
-
-        // afficher les questions sur la page du quiz
-
-
-            return $this->show('quizConsult', [
-                'currentQuiz' => $currentQuiz,
-                'questions' => $questions,
-            ]);
+            // afficher les questions sur la page du quiz
+                return $this->show('quizConsult', [
+                    'currentQuiz' => $currentQuiz,
+                    'questions' => $questions,
+                ]);
         } else {
             // on lance NotFoundHttpException afin d'afficher la page 404
             abort(404);
-        }
-        
+        }        
     }
 
     public function quizPost(Request $request, $id)
     {
-        // récupérer l'id du quiz
-        $quizId = intval($id);
         // récupérer les questions du quiz
         $quizQuestions = Quiz::find($id)->questions;
         // on initialise le compteur de bonne réponses à 0

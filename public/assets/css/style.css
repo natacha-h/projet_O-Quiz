@@ -8,10 +8,10 @@ bleu pâle : #AFD0FF
 
 */
 body {
-    background-color: #087E8B ;
+    background-color: rgb(196, 208, 221);
 }
 .jumbotron{
-    background-color: #21295C;
+    background-color: #087E8B;
     margin: -1.25rem;
     margin-bottom: 0;
 }
@@ -23,7 +23,7 @@ body {
 .navbar{
     /* margin-left :-1.25rem; */
     margin: 0 -1.25rem 1rem;
-    background-color: #FF970F;
+    background-color: #21295C;
 }
 h1 {
     font-size: 3.5em;
@@ -53,19 +53,20 @@ a {
 }
 
 a:hover{
-    color: #CA054D;
+    color: #21295C;
     text-decoration: none;
 }
 h6, .card-text, .answers-list, .card-body label, .question__info {
     color: #fffffa;
 }
 
-.container {
-    max-width: 85vw;
+.container-fluid {
     margin: 0 auto;
-    background-color: #AFD0FF;
     padding: 1.25rem;
-    /* box-shadow: 0 0 20px 10px rgba(255, 151, 15, 0.411); */
+}
+
+#main-content{
+    padding: 0 3rem;
 }
 
 #intro {
@@ -79,7 +80,7 @@ h6, .card-text, .answers-list, .card-body label, .question__info {
 
 .card {
     width: 30%;
-    background-color: #21295C;
+    background-color: #087E8B;
     border: none;
 }
 
@@ -95,9 +96,7 @@ h6, .card-text, .answers-list, .card-body label, .question__info {
 form {
     margin: 0 auto;
 }
-/* .row > .col {
-    flex: 1;
-} */
+
 .col.question {
     width: calc(100% / 3 - 2.5rem);
 } 
@@ -149,12 +148,6 @@ form {
 }
 
 .btn {
-    /* 
-    width: 100%;
-    color: #009999;
-    font-size: 1.4em;
-    font-weight: bold;
-    padding: 0.325rem 0; */
     display: block;
     margin: 0.625rem auto;
     text-align: center;
